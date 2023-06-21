@@ -1,0 +1,39 @@
+
+
+
+    
+# Curl commands for REST Server resource Invoice
+# Post
+curl -X POST -H "Content-Type: application/json" \
+-d '{"Items": "sample string","Name": "sample string","Amount": "1"}' \
+http://localhost:3322/v1/invoices
+
+# Get
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:3322/v1/invoices
+
+# Put
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"Items": "sample string","Name": "sample string","Amount": "1"}' \
+http://localhost:3322/v1/invoices/123
+
+# Put
+### wrong id passed in param
+curl -X PUT -H "Content-Type: application/json" \
+-d '{"Id": 123,"Items": "sample string","Name": "sample string","Amount": "1"}' \
+http://localhost:3322/v1/invoices/1234
+
+# Get  (retrieve specific Invoice)
+curl -X GET -H "Content-Type: application/json" \
+http://localhost:3322/v1/invoices/123
+
+# Delete
+curl -X DELETE -H "Content-Type: application/json" \
+http://localhost:3322/v1/invoices/123
+
+    
+
+# when mysql throws error about server connection, fire below commands
+# CREATE USER 'root'@'%' IDENTIFIED BY 'password';
+# GRANT ALL PRIVILEGES ON *.* TO 'root'@'%';
+
